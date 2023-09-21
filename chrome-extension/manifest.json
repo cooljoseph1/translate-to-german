@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Replace words with their translations in a sentence",
+    "description": "The chrome extension is only here to get the words on the web page to change. Everything else is local.",
+    "version": "0.0.1",
+    "icons": {
+        "16": "icon/icon16.png",
+        "48": "icon/icon48.png",
+        "32": "icon/icon32.png",
+        "128": "icon/icon128.png"
+    },
+    "options_page": "settings/settings.html",
+    "action": {
+        "default_title": "Replace with German!",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+      "scripting",
+      "activeTab"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "js": ["service.js"],
+        "matches": [
+        ]
+    }]
+}
